@@ -5,7 +5,7 @@
 4. Login to Postgresql CLI `psql -Upostgres`
 
 # LOAD CSV USING COPY FROM
-1. Create database youtube_stat
+1. Create table youtube_stat
 ```
 CREATE TABLE youtube_stat (
   rank INT,

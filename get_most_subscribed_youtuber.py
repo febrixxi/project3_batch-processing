@@ -3,6 +3,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 
+# create database connection
 def connect_db(database):
     user = 'postgres'
     passwd = 'postgres'
@@ -16,14 +17,21 @@ def connect_db(database):
     return conn
 
 def most_subscribed(sql):
+    # connect to raw database
     conn = connect_db('youtube')
 
     # read sql table
     data = pd.read_sql(sql, con=conn)
 
+    # connect to datawarehouse
     conn = connect_db('youtube_dw')
 
+    # load dataframe to warehouse
     data.to_sql('youtuber_by_year', con=conn, if_exists='replace', index=False)
+
+    # load to bigquery
+    # define bigquery loader function
+
 
     print('success')
 
