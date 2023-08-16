@@ -7,7 +7,7 @@
 # LOAD CSV USING COPY FROM
 1. Create table youtube_stat
 ```
-CREATE TABLE youtube_stat (
+CREATE TABLE latihan_users_febri(
   rank INT,
   Youtuber TEXT,
   subscribers BIGINT,
